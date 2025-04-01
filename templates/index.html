@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor RAW para JPEG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Conversor RAW para JPEG</h1>
+        <form id="upload-form" enctype="multipart/form-data" action="/upload" method="POST" class="upload-box">
+            <div class="input-group">
+                <label for="files" class="file-label">Escolha uma pasta com fotos (.cr2, .cr3, .nef)</label>
+                <input type="file" id="files" name="files" accept=".cr2,.cr3,.nef" webkitdirectory multiple required>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="baixa_resolucao" name="baixa_resolucao">
+                <label for="baixa_resolucao">Baixa resolução (1920px)</label>
+            </div>
+            <button type="submit" class="convert-btn">Converter</button>
+        </form>
+        <div class="status-box">
+            <p id="status">Pronto para iniciar</p>
+            <div id="progress-bar" class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

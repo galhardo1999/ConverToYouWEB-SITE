@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0e7ff, #f3f4f6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.file-label {
+    display: block;
+    font-size: 1.1rem;
+    color: #4b5e91;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: 2px dashed #93c5fd;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 1rem;
+    color: #64748b;
+    transition: border-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #3b82f6;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #4b5e91;
+}
+
+input[type="checkbox"] {
+    accent-color: #3b82f6;
+    width: 18px;
+    height: 18px;
+}
+
+.convert-btn {
+    background: #3b82f6;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.convert-btn:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+.status-box {
+    margin-top: 30px;
+}
+
+#status {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #3b82f6;
+    border-radius: 5px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .convert-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
